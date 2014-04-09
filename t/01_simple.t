@@ -1,8 +1,21 @@
 use strict;
 use warnings;
-use Test::More tests => 3;
+use Test::More tests => 16;
 use Path::Canonical;
 
-is('/var/tmp', canonpath('/var/tmp/./foo/../bar/..'));
-is('/var/tmp', canonpath('/var/tmp'));
-is('/foo/bar/baz', canonpath('/var//../../../foo/bar/baz'));
+is(canonpath('/var/tmp/./foo/../bar/..'), '/var/tmp/');
+is(canonpath('/var/tmp/./foo/../bar/../'), '/var/tmp/');
+is(canonpath('/var/tmp/./foo/../bar'), '/var/tmp/bar');
+is(canonpath('/../bar/..'), '/');
+is(canonpath('/../bar/../'), '/');
+is(canonpath('/../bar'), '/bar');
+is(canonpath('../bar/..'), '/');
+is(canonpath('../bar/../'), '/');
+is(canonpath('../bar'), '/bar');
+is(canonpath('./bar/..'), '/');
+is(canonpath('./bar/../'), '/');
+is(canonpath('./bar'), '/bar');
+is(canonpath('/var/tmp/./foo/../bar/'), '/var/tmp/bar/');
+is(canonpath('/var/tmp'), '/var/tmp');
+is(canonpath('/var//../../../foo/bar/baz'), '/foo/bar/baz');
+is(canonpath('/./././././././././.bashrc'), '/.bashrc');

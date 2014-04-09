@@ -6,12 +6,13 @@ use base 'Exporter';
 
 our @EXPORT = qw/canonpath/;
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 sub canonpath {
     my $path = shift;
     my @ret = ();
-    for my $tok (split(/\/+/, $path)) {
+    $path .= '/' if $path =~ /[.\/]$/;
+    for my $tok (split(/\/+/, $path . '-')) {
          next if $tok eq '.';
          if ($tok eq '..') {
              pop @ret;
@@ -19,7 +20,7 @@ sub canonpath {
          }
          push @ret, $tok if $tok;
     }
-    '/' . join '/', @ret
+    '/' . substr(join('/', @ret), 0, -1)
 }
 
 1;
