@@ -65,6 +65,6 @@
          "web" : "https://github.com/mattn/p5-Path-Canonical"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_authority" : "cpan:MATTN"
 }
