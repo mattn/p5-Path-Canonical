@@ -4,11 +4,21 @@ use strict;
 use warnings;
 use base 'Exporter';
 
-our @EXPORT = qw/canonpath/;
+our @EXPORT = qw/canon_path canon_filepath/;
 
 our $VERSION = "0.03";
 
-sub canonpath {
+sub canon_filepath {
+    my $path = shift;
+    return canon_path($path) if $^O ne 'MSWin32';
+    $path =~ s!\\!/!g;
+    $path =~ s!^([a-zA-Z]:|//[^/]+/+[^/]+)!!g;
+    $path = $& . canon_path($path);
+    $path =~ s!/!\\!g;
+    $path;
+}
+
+sub canon_path {
     my $path = shift;
     my @ret = ();
     $path .= '/' if $path =~ /[.\/]$/;
