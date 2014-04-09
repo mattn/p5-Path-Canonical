@@ -1,6 +1,6 @@
 # NAME
 
-Path::Canonical - It's new $module
+Path::Canonical - Simply utility function to get canonical paths.
 
 # SYNOPSIS
 
@@ -8,7 +8,9 @@ Path::Canonical - It's new $module
 
 # DESCRIPTION
 
-Path::Canonical is ...
+Path::Canonical is simply utility function to get canonical paths.
+Cwd::abs\_path are using realpath to get canonical paths. So the file should be exists.
+But if you want to write web application and handle requset URIs, you need to avoid adirectory traversal.
 
 # LICENSE
 

@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Simply utility function to get canonical paths.",
    "author" : [
       "mattn <mattn.jp@gmail.com>"
    ],
@@ -54,5 +54,17 @@
       }
    },
    "release_status" : "unstable",
-   "version" : "0.01"
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/mattn/p5-Path-Canonical/issues"
+      },
+      "homepage" : "https://github.com/mattn/p5-Path-Canonical",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/mattn/p5-Path-Canonical.git",
+         "web" : "https://github.com/mattn/p5-Path-Canonical"
+      }
+   },
+   "version" : "0.01",
+   "x_authority" : "cpan:MATTN"
 }
