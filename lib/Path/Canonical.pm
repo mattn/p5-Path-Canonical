@@ -6,7 +6,7 @@ use base 'Exporter';
 
 our @EXPORT = qw/canon_path canon_filepath/;
 
-our $VERSION = "0.04";
+our $VERSION = "0.05";
 
 sub canon_filepath {
     my $path = shift;
