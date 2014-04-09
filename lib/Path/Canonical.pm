@@ -13,7 +13,7 @@ sub canon_filepath {
     return canon_path($path) if $^O ne 'MSWin32';
     $path =~ s!\\!/!g;
     $path =~ s!^([a-zA-Z]:|//[^/]+/+[^/]+)!!g;
-    $path = $& . canon_path($path);
+    $path = ($&||'') . canon_path($path);
     $path =~ s!/!\\!g;
     $path;
 }
