@@ -1,5 +1,5 @@
 {
-   "abstract" : "Simply utility function to get canonical paths.",
+   "abstract" : "Simple utility to get canonical paths.",
    "author" : [
       "mattn <mattn.jp@gmail.com>"
    ],
@@ -66,5 +66,8 @@
       }
    },
    "version" : "0.02",
-   "x_authority" : "cpan:MATTN"
+   "x_authority" : "cpan:MATTN",
+   "x_contributors" : [
+      "lestrrat <lestrrat+github@gmail.com>"
+   ]
 }

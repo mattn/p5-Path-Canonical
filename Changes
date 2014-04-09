@@ -2,8 +2,6 @@ Revision history for Perl extension Path-Canonical
 
 {{$NEXT}}
 
-0.02 2014-04-09T04:47:19Z
-
     - Check the path is a file or directory
 
 

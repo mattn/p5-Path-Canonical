@@ -1,6 +1,6 @@
 # NAME
 
-Path::Canonical - Simply utility function to get canonical paths.
+Path::Canonical - Simple utility to get canonical paths.
 
 # SYNOPSIS
 
@@ -8,9 +8,10 @@ Path::Canonical - Simply utility function to get canonical paths.
 
 # DESCRIPTION
 
-Path::Canonical is simply utility function to get canonical paths.
-Cwd::abs\_path are using realpath to get canonical paths. So the file should be exists.
-But if you want to write web application and handle requset URIs, you need to avoid adirectory traversal.
+Path::Canonical is a simple utility to get canonical paths.
+Other tools such as Cwd::abs\_path exist, but they need to refer to the actual entry in the file system in order to work.
+This is not feasible, for example, when you just want to cleanse the specified path in a web application, where you may
+be dealing with a virtual path that does not exist in the file system.
 
 # LICENSE
 
